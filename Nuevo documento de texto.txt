@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+class Metro {
+public:
+    Metro(const std::string& redNombre, int numLineas)
+        : redNombre_(redNombre), numLineas_(numLineas) {}
+
+    // Métodos para obtener y establecer atributos
+    // ...
+
+private:
+    std::string redNombre_;
+    int numLineas_;
+};
+
+class Linea : public Metro {
+public:
+    Linea(const std::string& redNombre, const std::string& lineaNombre, int numEstaciones)
+        : Metro(redNombre, 1), lineaNombre_(lineaNombre), numEstaciones_(numEstaciones) {}
+
+    // Métodos para obtener y establecer atributos
+    // ...
+
+private:
+    std::string lineaNombre_;
+    int numEstaciones_;
+};
+
+class Estacion : public Linea {
+public:
+    Estacion(const std::string& redNombre, const std::string& lineaNombre,
+             const std::string& estacionNombre, int tiempoViaje, bool esTransferencia)
+        : Linea(redNombre, lineaNombre, 1), estacionNombre_(estacionNombre),
+          tiempoViaje_(tiempoViaje), esTransferencia_(esTransferencia) {}
+
+    // Métodos para obtener y establecer atributos
+    // ...
+
+private:
+    std::string estacionNombre_;
+    int tiempoViaje_;
+    bool esTransferencia_;
+};
+
+int main() {
+    // Ejemplo de uso
+    Metro metro("Metro de la Ciudad", 3);
+    Linea linea1("Metro de la Ciudad", "Línea 1", 10);
+    Estacion estacion1("Metro de la Ciudad", "Línea 1", "Estación A", 5, false);
+
+    // Accede a los atributos y métodos según tus necesidades
+    // ...
+
+    return 0;
+}
