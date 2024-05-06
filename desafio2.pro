@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        Estacion.cpp \
         linea.cpp \
         main.cpp \
         metro.cpp

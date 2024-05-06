@@ -4,17 +4,20 @@ using namespace std;
 
 
 
-//constructor
+//constructor:
+
 Metro :: Metro(int _Nl ){
     Nl = _Nl;
     lineas_ = new Linea*[Nl];
 
 }
-//getter
+//getter:
+
 int Metro :: getNuml(){
     return Nl;
 }
-//desctructor
+//desctructor:
+
 Metro :: ~Metro(){
 
     for (int i = 0; i <= Nl; i++){
@@ -23,14 +26,14 @@ Metro :: ~Metro(){
     delete[] lineas_;
     cout << "Se ha eliminado correctamente la memoria";
 }
-//agregar linea
+//agregar linea:
 
 void Metro :: addl(int indice, string nombre,string tipoT,int NumE) {
     if (indice >= 0 && indice < Nl) {
         lineas_[indice] = new Linea(nombre,tipoT,NumE);
     }
 }
-//borrar linea
+//borrar linea:
 
 void Metro :: delLi(string nombre){
     for(int i = 0; i <= Nl; i++){

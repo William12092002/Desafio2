@@ -13,8 +13,11 @@ private:
     Estacion** Estaciones;
 public:
     Linea(string,string,int);
+    ~Linea();
     string getNombre();
     string getTipoT();
+    void addEs(int,string,bool);
+    void delEs(string);
     int getNumE();
 
 };

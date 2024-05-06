@@ -7,9 +7,10 @@ using namespace std;
 class Metro{
 
 private:
-    Linea** lineas_;
+
     int Nl;
 public:
+    Linea** lineas_;
     Metro(int);
     ~Metro();
     int getNuml();

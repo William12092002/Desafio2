@@ -6,10 +6,13 @@ class Estacion{
 
 private:
     string nombre;
+    bool trans;
     int tiempo1;
     int tiempo2;
 public:
     Estacion(string,bool);
+    ~Estacion();
+    string getNombre();
 
 };
 
