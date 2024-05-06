@@ -1,15 +1,17 @@
 #ifndef ESTACION_H
-
-#include "linea.h"
-#include <vector>
+#include <string>
 using namespace std;
 
-class Estacion: protected Linea{
+class Estacion{
 
-
+private:
+    string nombre;
+    int tiempo1;
+    int tiempo2;
+public:
+    Estacion(string,bool);
 
 };
-
 
 #define ESTACION_H
 

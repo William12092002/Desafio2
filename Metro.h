@@ -1,21 +1,22 @@
 #ifndef METRO_H
 #define METRO_H
-#include <map>
 #include <string>
-#include <vector>
 using namespace std;
+#include "Linea.h"
 
 class Metro{
 
-protected:
-    map <string,vector<int>>NetMap;
-    int numLin;
-    void crearlineas();
-
+private:
+    Linea** lineas_;
+    int Nl;
 public:
+    Metro(int);
+    ~Metro();
+    int getNuml();
+    void addl(int,string,string,int);
+    void delLi(string);
 
-    Metro(int numLin, int EsPlin);
-    short getNumLin();
+
 };
 
 #endif // METRO_H
