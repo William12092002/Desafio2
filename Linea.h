@@ -10,8 +10,11 @@ private:
     string Nombre;
     string tipoT;
     int NumE;
-    Estacion** Estaciones;
+
+
 public:
+    int cont;
+    Estacion** Estaciones;
     Linea(string,string,int);
     ~Linea();
     string getNombre();

@@ -5,6 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
         Estacion.cpp \
+        funciones.cpp \
         linea.cpp \
         main.cpp \
         metro.cpp
@@ -12,4 +13,5 @@ SOURCES += \
 HEADERS += \
     Estacion.h \
     Linea.h \
-    Metro.h
+    Metro.h \
+    funciones.h

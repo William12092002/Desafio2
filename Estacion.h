@@ -13,6 +13,9 @@ public:
     Estacion(string,bool);
     ~Estacion();
     string getNombre();
+    void setNombre(string);
+    void setTrans(bool);
+    bool getTrans();
 
 };
 

@@ -10,6 +10,10 @@ Linea::Linea( string _nombre, string _tipo, int _numE){
     tipoT = _tipo;
     NumE = _numE;
     Estaciones = new Estacion*[NumE];
+    cont = 0;
+    for(int i = 0; i <NumE;i++){
+        Estaciones[i]=nullptr;
+    }
 
 }
 //obtener nombre de la line:
@@ -28,7 +32,7 @@ string Linea :: getTipoT(){
 
 int Linea :: getNumE(){
 
-    return NumE;
+    return cont;
 }
 
 // Agregar una estación:
@@ -36,7 +40,15 @@ int Linea :: getNumE(){
 void Linea :: addEs(int pos, string nombre, bool Trans){
 
     if (pos >= 0 && pos < NumE) {
-        Estaciones[pos] = new Estacion(nombre,Trans);
+
+        if(Estaciones[pos] == nullptr){
+
+            Estaciones[pos] = new Estacion(nombre,Trans);
+            cont = cont +1;
+        }
+        else{
+            cout<<"Ya hay una estacion en esa posicion";
+        }
     }
 }
 
@@ -45,8 +57,11 @@ void Linea :: addEs(int pos, string nombre, bool Trans){
 void Linea :: delEs(string nombre){
 
     for(int i = 0; i <= NumE; i++){
-        if (Estaciones[i]->getNombre() == nombre){
+        if (Estaciones[i]->getNombre() == nombre && Estaciones[i]->getTrans() == false){
             delete Estaciones[i];
+        }
+        else{
+            cout << "La estacion seleccionada no existe o es de transferencia ";
         }
     }
 
@@ -60,5 +75,5 @@ Linea :: ~Linea(){
         delete Estaciones[i];
     }
     delete[] Estaciones;
-    cout << "Se ha eliminado correctamente la memoria";
+
 }
