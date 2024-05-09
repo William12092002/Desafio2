@@ -48,9 +48,13 @@ int main()
 
             }
             else{
+                int randi = rand()%numE;
+                string numm = "Estacion"+to_string(randi);
                 nRed.addl(pos,nombre,tipo,numE);
+                nRed.addest(nombre,numm,randi);
                 for(int o = 0; o <numl;o++){
                     if(nRed.lineas_[o] != nRed.lineas_[pos] && nRed.lineas_[o] != nullptr){
+                        cout<<nRed.lineas_[pos]->getNombre()<<nRed.lineas_[o]->getNombre();
                         nRed.connL(nRed.lineas_[pos]->getNombre(),nRed.lineas_[o]->getNombre());
                         break;
                     }
@@ -102,6 +106,7 @@ int main()
       }
     }while(menu != 0);
 
+    nRed.~Metro();
 
 
 

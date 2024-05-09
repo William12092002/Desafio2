@@ -93,16 +93,25 @@ void Metro :: connL(string n1, string n2){
                             }
 
                             else{
-                                for(int k =0; k <= lineas_[j]->cont;k++){
-                                    if(lineas_[j]->Estaciones[k]->getTrans()==false){
-                                        lineas_[j]->Estaciones[k]->setNombre(lineas_[j]->Estaciones[k]->getNombre()+n2);
-                                        break;
+                                for(int k =0; k <=lineas_[j]->NumE;k++){
+                                    if(lineas_[k]!=nullptr){
+                                        cout<<lineas_[j]->getNombre()<<lineas_[j]->Estaciones[k]->getNombre();
+                                        cout<<lineas_[j]->Estaciones[k]->getTrans();
+                                        if(lineas_[j]->Estaciones[k]->getTrans()==false){
+                                            lineas_[j]->Estaciones[k]->setNombre(lineas_[j]->Estaciones[k]->getNombre()+n2);
+                                            break;
+                                        }
                                     }
                                 }
-                                for(int l =0; l <= lineas_[i]->cont;l++){
-                                    if(lineas_[i]->Estaciones[l]->getTrans()==false){
-                                        lineas_[i]->Estaciones[l]->setNombre(lineas_[i]->Estaciones[l]->getNombre()+n1);
-                                        break;
+                                for(int l =0; l <=lineas_[i]->NumE;l++){
+                                    if (lineas_[l]!= nullptr){
+                                        cout<<lineas_[i]->Estaciones[l]->getNombre();
+                                        cout<<lineas_[i]->Estaciones[l]->getTrans();
+
+                                        if(lineas_[i]->Estaciones[l]->getTrans()==false){
+                                            lineas_[i]->Estaciones[l]->setNombre(lineas_[i]->Estaciones[l]->getNombre()+n1);
+                                            break;
+                                        }
                                     }
                                 }
                             }
@@ -141,9 +150,8 @@ void Metro :: addest(string noml, string nome,int pos){
             if(lineas_[i]->getNombre() == noml){
                 lineas_[i]->addEs(pos,nome,false);
             }
-            else{
-                cout << "No puedo anadir una estacion a una linea inexistente";
-            }
+
+
         }
     }
 }
@@ -193,7 +201,8 @@ void Metro :: belonges(string nomes ){
             for (int j = 0; j < Nl; j++){
                 if( lineas_[i]->Estaciones[j]!=nullptr && lineas_[i]->Estaciones[j]->getNombre()== nomes){
                     cout << "La estacion pertenece a la linea " << lineas_[i]->getNombre();
+                    break;
             }   }
-        }
+        }break;
     }
 }

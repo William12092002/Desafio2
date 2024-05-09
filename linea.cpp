@@ -11,8 +11,8 @@ Linea::Linea( string _nombre, string _tipo, int _numE){
     NumE = _numE;
     Estaciones = new Estacion*[NumE];
     cont = 0;
-    for(int i = 0; i <NumE;i++){
-        Estaciones[i]=nullptr;
+    for(int i = 0; i < NumE ;i++){
+        Estaciones[i] = nullptr;
     }
 
 }

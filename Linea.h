@@ -9,10 +9,11 @@ class Linea{
 private:
     string Nombre;
     string tipoT;
-    int NumE;
+
 
 
 public:
+    int NumE;
     int cont;
     Estacion** Estaciones;
     Linea(string,string,int);
